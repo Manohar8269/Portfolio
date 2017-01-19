@@ -13,6 +13,11 @@ function Project() {
          className="text-blue-600 hover:underline">
             <li>Transport Website</li>
          </a>
+          <br></br>
+         <a href="https://github.com/Manohar8269/Self-Learning-AI-for-games-_FlappyBird" target="_blank" rel="noopener noreferrer"
+         className="text-blue-600 hover:underline">
+            <li>Self-Learning-AI-for-games-_FlappyBird</li>
+         </a>
       
       </div>
       
