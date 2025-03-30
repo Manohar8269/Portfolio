@@ -4,7 +4,6 @@ import Navbar from './component/Navbars'
 import About from './component/About'
 import Services from './component/Service'
 import Contact from './component/Contact'
-import { Routes,Route } from 'react-router-dom'
 import Footer from './component/Footer'
 
 function App() {
