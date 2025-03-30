@@ -4,6 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaLinkedin } from "react-icons/
 function Contact() {
   return (
     <>
+    <section id="contact">
       <div className="flex h-[70vh]">
         <div className="w-1/2 bg-white p-12 flex flex-col justify-center mt-2">
           <h1 className="text-5xl font-bold">Contact</h1>
@@ -64,6 +65,7 @@ function Contact() {
           <hr className="w-12 border-t-2 border-white mt-5" />
         </div>
       </div>
+      </section>
     </>
   )
 }

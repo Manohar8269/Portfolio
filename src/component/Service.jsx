@@ -2,6 +2,7 @@ import { FaLaptopCode, FaBolt, } from "react-icons/fa";
 
 const Services = () => {
   return (
+    <section id="service">
     <div className="flex h-[70vh]">
       
      
@@ -31,6 +32,7 @@ const Services = () => {
         
       </div>
     </div>
+    </section>
   );
 };
 

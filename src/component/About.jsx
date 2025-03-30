@@ -2,7 +2,9 @@ import React from 'react'
 
 function About() {
   return (
+    
     <>
+    <section id="about">
      <div className="flex h-[70vh]">
      
       <div className="w-1/2 bg-white p-12 flex flex-col justify-center mt-2">
@@ -23,6 +25,7 @@ knowledge in these fields. leveraging my skills for impactful contributions in t
         <hr className="w-12 border-t-2 border-white mt-5" />
       </div>
     </div>
+    </section>
     </>
   )
 }
