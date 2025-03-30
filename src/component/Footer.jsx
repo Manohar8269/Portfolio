@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.css";
 
 export default function Footer() {
   const [showQR, setShowQR] = useState(false);

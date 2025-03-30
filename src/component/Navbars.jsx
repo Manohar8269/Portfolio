@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Resume from "../assets/Resume.pdf";
+import "./styles.css";
 
 const roles = ["Web Developer", "Graphic Designer"];
 

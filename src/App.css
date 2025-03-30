@@ -1,0 +1,12 @@
+/* styles.css */
+.container {
+    width: 90%;
+    margin: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+    }
+  }
+  

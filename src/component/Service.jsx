@@ -1,4 +1,5 @@
 import { FaLaptopCode, FaBolt, } from "react-icons/fa";
+import "./styles.css";
 
 const Services = () => {
   return (
