@@ -10,7 +10,6 @@ const Navbar = () => {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const currentRole = roles[index];
@@ -59,25 +58,22 @@ const Navbar = () => {
   return (
     <section id="home">
       <div
-        className="h-screen bg-cover bg-top flex flex-col justify-center items-center px-4 md:px-10"
+        className="h-screen bg-cover bg-top flex flex-col justify-center items-center"
         style={{ backgroundImage: "url('/photo.jpg')" }}
       >
-        <nav className="w-full flex justify-between items-center px-6 py-4 text-gray-400 fixed top-0 bg-opacity-70 z-50">
+        <nav className="w-full flex justify-between items-center px-10 py-4 text-gray-400 fixed top-0  bg-opacity-70">
           <div className="text-center">
-            <h1 className="text-2xl md:text-4xl text-white font-extrabold tracking-wider">
+            <h1 className="text-4xl text-white font-extrabold tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Manohar Singh Thakur
             </h1>
             <motion.div
-              className="w-20 h-1 bg-green-400 mx-auto mt-1"
+              className="w-30 h-1 bg-green-400 mx-auto mt-1"
               animate={{ scaleX: [0, 4, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
-          <div className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-            <button className="text-white text-2xl">☰</button>
-          </div>
-          <ul className={`md:flex space-x-6 hidden`}>
-            {["home", "about", "service", "contact"].map((item) => (
+          <ul className="flex space-x-6">
+            {['home', 'about', 'service', 'contact'].map((item) => (
               <li
                 key={item}
                 onClick={() => handleScroll(item)}
@@ -95,30 +91,15 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {menuOpen && (
-          <div className="absolute top-16 left-0 w-full bg-black bg-opacity-80 flex flex-col items-center md:hidden py-4 space-y-4">
-            {["home", "about", "service", "contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item}`}
-                onClick={() => setMenuOpen(false)}
-                className="text-white text-lg hover:text-green-400"
-              >
-                {item.charAt(0).toUpperCase() + item.slice(1)}
-              </a>
-            ))}
-          </div>
-        )}
-
-        <motion.h2 className="text-2xl md:text-4xl font-bold text-white absolute top-20 left-4 md:left-10">
+        <motion.h2 className="text-4xl font-bold text-white absolute top-20 left-10">
           I am a <span className="text-green-400">{typing}</span>
         </motion.h2>
-
+        
         <a
           href={Resume}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-40 left-4 md:left-10 bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
+          className="absolute top-40 left-10 bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
         >
           Download Resume
         </a>
@@ -128,7 +109,7 @@ const Navbar = () => {
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
               alt="WhatsApp"
-              className="w-10 md:w-12 h-10 md:h-12"
+              className="w-12 h-12"
             />
           </a>
         </div>
