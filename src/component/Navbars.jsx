@@ -77,7 +77,7 @@ const Navbar = () => {
             {menuOpen ? <X size={28} className="text-white" /> : <Menu size={28} className="text-white" />}
           </div>
           <ul className={`absolute md:static bg-black md:bg-transparent top-16 left-0 w-full md:w-auto md:flex space-x-6 p-4 md:p-0 ${menuOpen ? "block" : "hidden"}`}>
-            {["home", "about", "service", "contact"].map((item) => (
+            {["home", "about", "service", "Project","contact"].map((item) => (
               <li key={item} onClick={() => handleScroll(item)} className="text-white cursor-pointer hover:text-green-400 transition py-2 md:py-0 text-center">
                 {item.charAt(0).toUpperCase() + item.slice(1)}
               </li>

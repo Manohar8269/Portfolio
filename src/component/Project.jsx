@@ -3,7 +3,7 @@ import React from 'react'
 function Project() {
   return (
     <>
-      <section id="about">
+      <section id="Project">
      <div className="flex flex-col md:flex-row h-auto md:h-[70vh]">
      
       <div className="w-1/2 bg-white p-12 flex flex-col justify-center mt-2">
