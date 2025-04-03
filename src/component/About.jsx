@@ -1,12 +1,12 @@
 import React from 'react'
-import "./styles.css";
+
 
 function About() {
   return (
     
     <>
     <section id="about">
-     <div className="flex h-[70vh]">
+     <div className="flex flex-col md:flex-row h-auto md:h-[70vh]">
      
       <div className="w-1/2 bg-white p-12 flex flex-col justify-center mt-2">
         <h1 className="text-5xl font-bold">About</h1>

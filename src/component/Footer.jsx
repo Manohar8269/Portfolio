@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "./styles.css";
+
 
 export default function Footer() {
   const [showQR, setShowQR] = useState(false);
 
   return (
     <footer className="bg-black text-white py-6 text-center">
-      <div className="flex justify-center space-x-8">
+      <div className="flex flex-wrap justify-center space-x-4 md:space-x-8 gap-4">
         <a href="https://www.facebook.com/profile.php?id=100028025951053" target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:underline">
           FACEBOOK
         </a>

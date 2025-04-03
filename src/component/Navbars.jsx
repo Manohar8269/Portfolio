@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Resume from "../assets/Resume.pdf";
-import "./styles.css";
 
 const roles = ["Web Developer", "Graphic Designer"];
 
@@ -11,6 +11,7 @@ const Navbar = () => {
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const currentRole = roles[index];
@@ -40,13 +41,6 @@ const Navbar = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, index]);
 
-  const handleScroll = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 300);
@@ -56,70 +50,57 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  const handleScroll = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <section id="home">
-      <div
-        className="h-screen bg-cover bg-top flex flex-col justify-center items-center"
-        style={{ backgroundImage: "url('/photo.jpg')" }}
-      >
-        <nav className="w-full flex justify-between items-center px-10 py-4 text-gray-400 fixed top-0  bg-opacity-70">
-          <div className="text-center">
-            <h1 className="text-4xl text-white font-extrabold tracking-wider" style={{ fontFamily: 'Poppins, sans-serif' }}>
+      <div className="h-screen bg-cover bg-top flex flex-col justify-center items-center px-4 sm:px-10" style={{ backgroundImage: "url('/photo.jpg')" }}>
+        <nav className="w-full flex justify-between items-center px-6 py-4 text-gray-400 fixed top-0 bg-opacity-70 z-50">
+          <div>
+            <h1 className="text-2xl sm:text-4xl text-white font-extrabold tracking-wider relative">
               Manohar Singh Thakur
+           
+              <motion.div
+                className="absolute left-0 bottom+3 w-full h-1 bg-green-400"
+                animate={{ scaleX: [0, 1, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              />
             </h1>
-            <motion.div
-              className="w-30 h-1 bg-green-400 mx-auto mt-1"
-              animate={{ scaleX: [0, 4, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            />
           </div>
-          <ul className="flex space-x-6">
-            {['home', 'about', 'service', 'contact'].map((item) => (
-              <li
-                key={item}
-                onClick={() => handleScroll(item)}
-                className="cursor-pointer relative text-white hover:text-green-400 transition duration-300"
-              >
+          <div className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <X size={28} className="text-white" /> : <Menu size={28} className="text-white" />}
+          </div>
+          <ul className={`absolute md:static bg-black md:bg-transparent top-16 left-0 w-full md:w-auto md:flex space-x-6 p-4 md:p-0 ${menuOpen ? "block" : "hidden"}`}>
+            {["home", "about", "service", "contact"].map((item) => (
+              <li key={item} onClick={() => handleScroll(item)} className="text-white cursor-pointer hover:text-green-400 transition py-2 md:py-0 text-center">
                 {item.charAt(0).toUpperCase() + item.slice(1)}
-                <motion.div
-                  className="absolute left-0 bottom-0 w-full h-1 bg-green-400"
-                  initial={{ scaleX: 0 }}
-                  whileHover={{ scaleX: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
               </li>
             ))}
           </ul>
         </nav>
 
-        <motion.h2 className="text-4xl font-bold text-white absolute top-20 left-10">
+        <motion.h2 className="text-3xl sm:text-4xl font-bold text-white absolute top-32 left-6 sm:left-10">
           I am a <span className="text-green-400">{typing}</span>
         </motion.h2>
-        
-        <a
-          href={Resume}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute top-40 left-10 bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition"
-        >
+
+        <a href={Resume} target="_blank" rel="noopener noreferrer" className="absolute top-48 left-6 sm:left-10 bg-green-500 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition">
           Download Resume
         </a>
 
         <div className="fixed bottom-4 right-4">
           <a href="https://wa.me/8269185071" target="_blank" rel="noopener noreferrer">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-              alt="WhatsApp"
-              className="w-12 h-12"
-            />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" className="w-10 h-10 sm:w-12 sm:h-12" />
           </a>
         </div>
 
         {isVisible && (
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="fixed bottom-4 left-4 font-bold bg-white p-3 rounded-full shadow-lg hover:bg-gray-600 transition"
-          >
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="fixed bottom-4 left-4 font-bold bg-white p-3 rounded-full shadow-lg hover:bg-gray-600 transition">
             ▲
           </button>
         )}

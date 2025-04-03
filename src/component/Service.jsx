@@ -1,10 +1,10 @@
 import { FaLaptopCode, FaBolt, } from "react-icons/fa";
-import "./styles.css";
+
 
 const Services = () => {
   return (
     <section id="service">
-    <div className="flex h-[70vh]">
+    <div className="flex flex-col md:flex-row h-auto md:h-[70vh]">
       
      
       <div className="w-1/2 bg-black flex flex-col justify-center items-center text-white">
