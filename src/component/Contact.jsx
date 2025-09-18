@@ -46,8 +46,7 @@ function Contact() {
               </div>
               <div>
                 <p className="font-semibold">Address:</p>
-                <p className="text-gray-600">Vill+Post = Katghara Shankar <br></br>
-                  Sub-Distict = Madhuban Didtict = Mau
+                <p className="text-gray-600">Delhi
                 </p>
               </div>
             </div>
