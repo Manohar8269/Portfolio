@@ -13,9 +13,11 @@ function About() {
         <br></br>
         <h3 className="font-semibold text-lg mb-4">About my Self</h3>
         <p className="text-gray-600">
-        I am currently pursuing an MCA with specializing in Data Science and AI.I have gained expertise in 
-        programming languages such as HTML, CSS, JavaScript, Python, Bootstrap, & React.js along with comprehensive 
-        knowledge in these fields. leveraging my skills for impactful contributions in the tech industry.
+        Detail-oriented MCA graduate (Data Science & AI) with strong skills in Web Development, Programming, and Data Analysis.
+         Experienced in building responsive web applications and AI-based projects. Skilled in Python, JavaScript, React.js, 
+         and MySQL with practical internship experience. I have expertise in Graphic Designing, creating visually 
+         appealing designs, banners, and UI elements that complement my web development skills. This combination of 
+         technical knowledge and creative designing helps me deliver complete end-to-end solutions.
         </p>
       </div>
       
