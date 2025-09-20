@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react"; // arrow & close icons
+import { ChevronLeft, ChevronRight, X } from "lucide-react"; 
 import Image1 from "../assets/Image1.jpg";
 import Image2 from "../assets/Image2.jpg";
 import Image3 from "../assets/Image3.jpg";
